@@ -19,14 +19,14 @@ labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 st.write('# MNIST Recognizer')
 
-CANVAS_SIZE = 192
+CANVAS_SIZE = 200
 
 col1, col2 = st.columns(2)
 
 with col1:
     canvas = st_canvas(
         fill_color='#000000',
-        stroke_width=15,
+        stroke_width=12,
         stroke_color='#FFFFFF',
         background_color='#000000',
         width=CANVAS_SIZE,
