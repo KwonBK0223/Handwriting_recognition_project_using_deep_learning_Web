@@ -1,6 +1,5 @@
 numpy
 pandas
 tensorflow
-opencv-python == 4.5.1.48
-keras
+opencv-python==4.5.1.48
 streamlit
