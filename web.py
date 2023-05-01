@@ -17,9 +17,9 @@ def load():
 # 알파벳 대문자 레이블
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-st.write('# MNIST Recognizer')
+st.write('# 영어 대문자 예측')
 
-CANVAS_SIZE = 200
+CANVAS_SIZE = 192
 
 col1, col2 = st.columns(2)
 
