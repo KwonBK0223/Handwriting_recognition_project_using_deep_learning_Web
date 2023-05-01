@@ -3,10 +3,14 @@ from tensorflow.keras.models import load_model
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
+import requests
 
 @st.cache_resource
 def load():
-    return load_model('maincnn.h5')
+    url = 'https://github.com/KwonBK0223/streamlit_practice/blob/main/maincnn.h5'
+    r = requests.get(url)
+    with open('model.h5','wb') as f:
+        f.write(r.content)        
 model = load()
 
 # 알파벳 대문자 레이블
