@@ -17,7 +17,8 @@ def load():
 # 알파벳 대문자 레이블
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-st.write('# 영어 대문자 예측')
+st.write('# World Master')
+st.write('# Prediction of handwritten English character')
 
 CANVAS_SIZE = 192
 
@@ -52,5 +53,5 @@ if canvas.image_data is not None:
     # 레이블에 해당하는 문자를 가져옴
     pred_char = labels[pred_idx]
     
-    st.write('## Result: %s' % pred_char)
+    st.write('## Prediction : %s' % pred_char)
     st.bar_chart(y)
