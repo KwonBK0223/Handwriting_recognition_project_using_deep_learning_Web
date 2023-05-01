@@ -6,7 +6,7 @@ import numpy as np
 
 @st.cache_resource
 def load():
-    return load_model('C:/Users/kbk/Desktop/maincnn.h5')
+    return load_model('maincnn.h5')
 model = load()
 
 # 알파벳 대문자 레이블
