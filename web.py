@@ -26,7 +26,7 @@ col1, col2 = st.columns(2)
 with col1:
     canvas = st_canvas(
         fill_color='#000000',
-        stroke_width=5,
+        stroke_width=8,
         stroke_color='#FFFFFF',
         background_color='#000000',
         width=CANVAS_SIZE,
