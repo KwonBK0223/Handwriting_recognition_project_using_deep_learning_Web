@@ -72,6 +72,6 @@ if choice == 'Prediction':
     home()
 elif choice == 'What is CNN':
     page1()
-elif choice == 'Code':
-    page2()
+# elif choice == 'Code':
+#     page2()
 
