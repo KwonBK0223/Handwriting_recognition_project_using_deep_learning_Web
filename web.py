@@ -63,7 +63,8 @@ def page1():
     st.write(# "CNN")
 
 # 세 번째 페이지
-def page2():
+
+ def page2():
     st.write(# "Code")
 
 # 메뉴 생성
