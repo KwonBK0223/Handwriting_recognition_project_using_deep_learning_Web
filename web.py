@@ -66,6 +66,10 @@ def page1():
 def page2():
     st.write("Code")
 
+# 네 번째 페이지
+def page3():
+    st.write("# Team mate")
+
 # 메뉴 생성
 menu = ['Prediction', 'What is CNN', 'Code']
 choice = st.selectbox("메뉴", menu)
@@ -77,5 +81,6 @@ elif choice == 'What is CNN':
     page1()
 elif choice == 'Code':
     page2()
-
+elif choice == 'Team Mate':
+    page3()
 
