@@ -16,6 +16,7 @@ def load():
         f.write(r.content)        
     model = load_model('maincnn.h5')
     return model
+model = load()
 
 # 알파벳 대문자 레이블
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
