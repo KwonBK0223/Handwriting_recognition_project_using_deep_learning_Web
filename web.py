@@ -62,9 +62,6 @@ def home():
 def page1():
     st.write(# "CNN")
 
-# 세 번째 페이지
-def page2():
-    st.write("이것은 세 번째 페이지입니다.")
 
 # 메뉴 생성
 menu = ['Prediction', 'What is CNN', 'Code']
