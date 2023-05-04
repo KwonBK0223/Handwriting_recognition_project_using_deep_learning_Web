@@ -60,18 +60,18 @@ def home():
 
 # 두 번째 페이지
 def page1():
-    st.write("What is CNN?")
+    st.write("# What is CNN?")
 
 # 세 번째 페이지
 def page2():
-    st.write("Code")
+    st.write("# Code")
 
 # 네 번째 페이지
 def page3():
     st.write("# Team mate")
 
 # 메뉴 생성
-menu = ['Prediction', 'What is CNN', 'Code']
+menu = ['Prediction', 'What is CNN', 'Code','Team Mate']
 choice = st.selectbox("메뉴", menu)
 
 # 메뉴에 따른 페이지 선택
