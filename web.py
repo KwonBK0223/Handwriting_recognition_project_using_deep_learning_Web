@@ -20,8 +20,6 @@ def load():
 # 알파벳 대문자 레이블
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-# 알파벳 대문자 레이블
-labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # 홈 페이지
 def home():
     CANVAS_SIZE = 192
