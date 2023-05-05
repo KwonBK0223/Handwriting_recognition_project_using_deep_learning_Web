@@ -68,8 +68,15 @@ def page2():
 
 # 네 번째 페이지
 def page3():
-    st.write("# Team mate")
+    st.write("# Leader")
+    st.write("## Kwon Byeong Keun")
+    st.write("#### PNU Matematics 17")
+    st.write("#### house9895@naver.com")
 
+    st.write("# Team mate")
+    st.write("## Seong Da Som")
+    st.write("#### PNU Mathematics 19")
+    st.write("#### som0608@naver.com")
 # 메뉴 생성
 menu = ['Prediction', 'What is CNN', 'Code','Team Mate']
 choice = st.selectbox("메뉴", menu)
