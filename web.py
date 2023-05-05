@@ -116,8 +116,9 @@ def modeling_result():
 
 # 성찰과 개선점
 def review():
-    st.write("성찰과 발전, review")
-
+    st.write("# 성찰과 발전, review")
+    st.write("제작중")
+    
 # 팀원 페이지
 def Team_Mate():
     url = 'https://github.com/KwonBK0223/streamlit_practice/blob/main/Image/PNU_Mark.png?raw=true'
