@@ -109,10 +109,12 @@ def home():
 # 개념설명
 def CNN():
     st.write("# What is CNN")
+    st.write("제작중")
 
 # 모델링 결과
 def modeling_result():
     st.write("# 모델링 결과")
+    st.write("제작중")
 
 # 성찰과 개선점
 def review():
