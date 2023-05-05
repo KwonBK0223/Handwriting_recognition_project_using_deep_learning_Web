@@ -5,9 +5,14 @@ from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import requests
 
+# 화면을 최대로 와이드 
+st.set_page_config(layout="wide")
+
+# 제목
 st.write('# World Master')
 st.write('# Prediction of handwritten English character')
 
+# 모델 로드
 @st.cache(allow_output_mutation=True)
 def load():
     url = 'https://github.com/KwonBK0223/streamlit_practice/raw/main/maincnn.h5'
@@ -21,73 +26,126 @@ model = load()
 # 알파벳 대문자 레이블
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-# 홈 페이지
+# 메인 예측 페이지
 def home():
     CANVAS_SIZE = 192
 
-    col1, col2 = st.columns(2)
+    # 사용자로부터 숫자 입력 받기
+    num_canvas = st.number_input('Enter the number of alphabets you want to enter(1~10)', min_value=1, max_value=10, value=2, step=1)
 
-    with col1:
-        canvas = st_canvas(
-            fill_color='#000000',
-            stroke_width=12,
-            stroke_color='#FFFFFF',
-            background_color='#000000',
-            width=CANVAS_SIZE,
-            height=CANVAS_SIZE,
-            drawing_mode='freedraw',
-            key='canvas'
-        )
+    # canvas 생성 및 예측 결과 계산
+    predictions = ''
 
-    if canvas.image_data is not None:
-        img = canvas.image_data.astype(np.uint8)
-        img = cv2.resize(img, dsize=(28, 28))
-        preview_img = cv2.resize(img, dsize=(CANVAS_SIZE, CANVAS_SIZE), interpolation=cv2.INTER_NEAREST)
+    # 5개 단위로 자르기 위해서 줄 나누기
+    num_rows = num_canvas // 5 # 몫 => 줄 개수
+    num_cols = num_canvas % 5  # 나머지 => 마지막줄
+    for row in range(num_rows):
+        col_list = st.columns(5)
+        for i, col in enumerate(col_list):
+            with col:
+                canvas = st_canvas(
+                    fill_color='#000000',
+                    stroke_width=12,
+                    stroke_color='#FFFFFF',
+                    background_color='#000000',
+                    width=CANVAS_SIZE,
+                    height=CANVAS_SIZE,
+                    drawing_mode='freedraw',
+                    key=f'canvas{row}_{i}'  # row 값을 key에 추가
+                )
 
-        col2.image(preview_img)
+                if canvas.image_data is not None:
+                    img = canvas.image_data.astype(np.uint8)
+                    img = cv2.resize(img, dsize=(28, 28))
 
-        x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        x = x.reshape((-1, 28, 28, 1))
-        y = model.predict(x).squeeze()
+                    x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                    x = x.reshape((-1, 28, 28, 1))
+                    y = model.predict(x).squeeze()
 
-    # 예측 결과의 최댓값 인덱스를 구함
-    pred_idx = np.argmax(y)
-    # 레이블에 해당하는 문자를 가져옴
-    pred_char = labels[pred_idx]
+                    # 예측 결과의 최댓값 인덱스를 구함
+                    pred_idx = np.argmax(y)
+                    # 레이블에 해당하는 문자를 가져옴
+                    pred_char = labels[pred_idx]
+
+                    # 예측 결과 문자열에 추가
+                    predictions += pred_char
+                        
+    if num_cols > 0:
+        col_list = st.columns(num_cols)
+        for i, col in enumerate(col_list):
+            with col:
+                canvas = st_canvas(
+                    fill_color='#000000',
+                    stroke_width=12,
+                    stroke_color='#FFFFFF',
+                    background_color='#000000',
+                    width=CANVAS_SIZE,
+                    height=CANVAS_SIZE,
+                    drawing_mode='freedraw',
+                    key=f'canvas{num_rows}_{i}'  # num_rows 값을 key에 추가
+                )
+
+                if canvas.image_data is not None:
+                    img = canvas.image_data.astype(np.uint8)
+                    img = cv2.resize(img, dsize=(28, 28))
+
+                    x = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                    x = x.reshape((-1, 28, 28, 1))
+                    y = model.predict(x).squeeze()
+
+                    # 예측 결과의 최댓값 인덱스를 구함
+                    pred_idx = np.argmax(y)
+                    # 레이블에 해당하는 문자를 가져옴
+                    pred_char = labels[pred_idx]
+
+                    # 예측 결과 문자열에 추가
+                    predictions += pred_char
     
-    st.write('## Prediction : %s' % pred_char)
-    st.bar_chart(y)
-
-# 두 번째 페이지
+    # 결과값 출력
+    st.write('## Predictions : %s' % predictions)
+ 
+# 개념설명 페이지
 def page1():
-    st.write("# What is CNN?")
-
-# 세 번째 페이지
+    st.write("# What is CNN")
+    st.write("제작중")
+# 코드설명 페이지
 def page2():
-    st.write("# Code")
+    st.write("# 모델링 결과")
+    st.write("제작중")
 
-# 네 번째 페이지
-def page3():
-    st.write("# Leader")
-    st.write("## Kwon Byeong Keun")
-    st.write("#### PNU Matematics 17")
-    st.write("#### house9895@naver.com")
+# 팀원 페이지
+def Team_Mate():
+    #image_path = 'C:/Users/kbk/Desktop/PNU_Mark.png'
+    #img = Image.open(image_path)
+    col1, col2 = st.columns([1,5])
+    with col1:
+        st.write("\n")
+        st.write("\n")
+        #st.image(img, width = 200)
+        st.write("\n")
+        st.write("\n")
+        st.write("\n")
+        #st.image(img, width = 200)
+    with col2:
+        st.write("# Leader")
+        st.write("## Kwon Byeong Keun")
+        st.write("#### PNU Matematics 17")
+        st.write("#### house9895@naver.com")
 
-    st.write("# Team mate")
-    st.write("## Seong Da Som")
-    st.write("#### PNU Mathematics 19")
-    st.write("#### som0608@naver.com")
+        st.write("# Team mate")
+        st.write("## Seong Da Som")
+        st.write("#### PNU Mathematics 19")
+        st.write("#### som0608@naver.com")
 # 메뉴 생성
-menu = ['Prediction', 'What is CNN', 'Code','Team Mate']
-choice = st.selectbox("메뉴", menu)
+menu = ['Prediction', 'What is CNN', 'Modeling Results','Team Mate']
+choice = st.selectbox("Menu", menu)
 
 # 메뉴에 따른 페이지 선택
 if choice == 'Prediction':
     home()
 elif choice == 'What is CNN':
     page1()
-elif choice == 'Code':
+elif choice == 'Modeling Results':
     page2()
 elif choice == 'Team Mate':
-    page3()
-
+    Team_Mate()
