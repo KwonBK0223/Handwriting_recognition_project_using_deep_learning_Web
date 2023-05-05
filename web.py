@@ -4,7 +4,8 @@ import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import requests
-from io import Image
+from PIL import Image
+from io import BytesIO
 
 # 화면을 최대로 와이드 
 st.set_page_config(layout="wide")
@@ -116,17 +117,18 @@ def page2():
 
 # 팀원 페이지
 def Team_Mate():
-    image_path = requests.get('https://github.com/KwonBK0223/streamlit_practice/blob/main/Image/PNU_Mark.png')
+    url = 'https://github.com/KwonBK0223/streamlit_practice/blob/main/Image/PNU_Mark.png?raw=true'
+    response = requests.get(url)
     img = Image.open(BytesIO(response.content))
     col1, col2 = st.columns([1,5])
     with col1:
         st.write("\n")
         st.write("\n")
-        #st.image(img, width = 200)
+        st.image(img, width = 200)
         st.write("\n")
         st.write("\n")
         st.write("\n")
-        #st.image(img, width = 200)
+        st.image(img, width = 200)
     with col2:
         st.write("# Leader")
         st.write("## Kwon Byeong Keun")
