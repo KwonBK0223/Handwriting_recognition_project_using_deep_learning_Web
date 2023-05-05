@@ -106,20 +106,17 @@ def home():
     # 결과값 출력
     st.write('## Predictions : %s' % predictions)
  
-# 개념설명 페이지
+# 개념설명
 def CNN():
     st.write("# What is CNN")
-    st.write("제작중")
-    
+
 # 모델링 결과
 def modeling_result():
     st.write("# 모델링 결과")
-    st.write("제작중")
-   
+
 # 성찰과 개선점
 def review():
-    st.write("# 성찰과 발전, review")
-    st.write("제작중")
+    st.write("성찰과 발전, review")
 
 # 팀원 페이지
 def Team_Mate():
@@ -145,6 +142,7 @@ def Team_Mate():
         st.write("## Seong Da Som")
         st.write("#### PNU Mathematics 19")
         st.write("#### som0608@naver.com")
+        
 # 메뉴 생성
 menu = ['Prediction', 'What is CNN', 'Modeling Results','Reflections & Improvements','Team Mate']
 choice = st.selectbox("Menu", menu)
@@ -157,6 +155,6 @@ elif choice == 'What is CNN':
 elif choice == 'Modeling Results':
     modeling_result()
 elif choice == 'Reflections & Improvements':
-    review()    
+    review()
 elif choice == 'Team Mate':
     Team_Mate()
