@@ -138,13 +138,13 @@ def model_summary():
     st.write("* X는 'label'열을 제외한 나머지 열들로 구성합니다.")
 
     st.write("### 2. 데이터셋 셔플")
-    image_path = 'Image/2.shuffle.png'
+    image_path = 'Image/2.shuffle.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* X 데이터를 셔플합니다.")
 
     st.write("### 3. train, test set 으로 split & 데이터 값 범위 조정(Scaling)")
-    image_path = 'Image/3.scaling.png'
+    image_path = 'Image/3.scaling.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* X, y 데이터를 train set과 test set으로 분리합니다.")
@@ -153,20 +153,20 @@ def model_summary():
     st.write("* train_scaled에서 첫번째 데이터의 0~9번째 feature값을 출력합니다.")
 
     st.write("### 4. 데이터 배열의 차원을 변경(Reshape)")
-    image_path = 'Image/4.reshape.png'
+    image_path = 'Image/4.reshape.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* train_scaled와 test_scaled 데이터를 (샘플수, 가로, 세로, 채널)로 reshape합니다.")
 
     st.write("### 5. 데이터 형식변환(Convert)")
-    image_path = 'Image/5.convert.png'
+    image_path = 'Image/5.convert.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* y_train과 y_test를 one-hot encoding합니다.")
     st.write("* y_train과 y_test의 shape는 (샘플 수, 클래스 수)가 됩니다.")
 
     st.write("### 6. Modeling")
-    image_path = 'Image/6.modeling.png'
+    image_path = 'Image/6.modeling.PNG'
     img = Image.open(image_path)
     st.image(img, width = 1000)
     st.write("* y_train과 y_test를 one-hot encoding합니다.")
@@ -182,7 +182,7 @@ def model_summary():
     st.write("* model.summary()를 사용하여 모델 구조를 출력합니다.")
 
     st.write("### 7. 학습(Fit)")
-    image_path = 'Image/7.fit.png'
+    image_path = 'Image/7.fit.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* model.fit() 함수를 사용하여 모델을 학습합니다.")
@@ -194,7 +194,7 @@ def model_summary():
     st.write("* 학습이 끝나면, history 변수에 학습 이력을 저장합니다.")
     
     st.write("### 8. 모델 평가")
-    image_path = 'Image/8.accuracy.png'
+    image_path = 'Image/8.accuracy.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* model.evaluate() 함수를 사용하여 test set으로 모델을 평가합니다.")
@@ -203,7 +203,7 @@ def model_summary():
     st.write("* 모델의 평가 결과인 손실(loss)과 정확도(accuracy)를 출력합니다.")
 
     st.write("### 9. loss값 시각화(Visualization)")
-    image_path = 'Image/9.loss_graph.png'
+    image_path = 'Image/9.loss_graph.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     st.write("* 모델 학습 과정에서 각 epoch마다 발생한 loss 값을 시각화합니다.")
