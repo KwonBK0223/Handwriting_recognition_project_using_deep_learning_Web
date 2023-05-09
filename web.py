@@ -109,7 +109,24 @@ def home():
 # 개념설명
 def CNN():
     st.write("# What is CNN")
-    st.write("제작중")
+    st.write("### CNN 이란")
+    st.write("* 기원")
+    st.write("데이비드 허블과 토르스텐 비셀이 시각피질 구조 연구(뇌가 이미지를 인식하는 방법을 찾는 연구)를 통해 \
+우리의 뉴런(신경)들이 시야의 일부 범위 안에 있는 시각자극에만 반응한다는 것을 보였다.")
+    st.write("즉, 뉴런이 시야의 몇몇 부분에 반응하고 이 부분들을 합쳐서 전체 시야를 감싼다는 것이다.\
+이 연구가 CNN, 합성곱 신경망으로 점진적으로 진화되었다.\
+")
+    st.write("* 구조")
+    st.write("<Input layer - Convolution layer - Pooling layer - Fully Connected layer - Ouput layer>")
+    st.write("(1) Input layer: 이미지를 입력")
+    st.write("(2) Convolution layer: 필터를 통해 이미지에서 특성(feature)을 추출")
+    st.write("(3) Pooling layer: 특성맵을 다운샘플링하여 연산량을 감소")
+    st.write("(4) Fully Connected layer: 소프트맥스를 활성화함수로 사용하여 다중 분류(Multi-class Classification)")
+    st.write("(5) Output layer: 이미지를 분류해 결과 출력")
+    
+    url = 'https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning_Web/blob/main/Image/CNN.PNG'
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
 
 # 모델링 결과
 def modeling_result():
