@@ -127,11 +127,94 @@ def CNN():
     image_path = 'Image/CNN.PNG'
     img = Image.open(image_path)    
     st.image(img, width = 1000)
-# 모델링 결과
-def modeling_result():
-    st.write("# 모델링 결과")
-    st.write("제작중")
+    
+# 모델 요약
+def model_summary():
+    st.write("### 1. 입력 데이터와 출력 데이터로 Split")
+    image_path = 'Image/1.split.PNG'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* 데이터셋에서 '0' 열을 'label'로 이름을 변경하고, 'label'열을 y로 지정합니다.")
+    st.write("* X는 'label'열을 제외한 나머지 열들로 구성합니다.")
 
+    st.write("### 2. 데이터셋 셔플")
+    image_path = 'Image/2.shuffle.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* X 데이터를 셔플합니다.")
+
+    st.write("### 3. train, test set 으로 split & 데이터 값 범위 조정(Scaling)")
+    image_path = 'Image/3.scaling.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* X, y 데이터를 train set과 test set으로 분리합니다.")
+    st.write("* MinMaxScaler()를 사용하여 데이터를 스케일링합니다.")
+    st.write("* 스케일링한 train set과 test set을 각각 train_scaled, test_scaled에 저장합니다.")
+    st.write("* train_scaled에서 첫번째 데이터의 0~9번째 feature값을 출력합니다.")
+
+    st.write("### 4. 데이터 배열의 차원을 변경(Reshape)")
+    image_path = 'Image/4.reshape.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* train_scaled와 test_scaled 데이터를 (샘플수, 가로, 세로, 채널)로 reshape합니다.")
+
+    st.write("### 5. 데이터 형식변환(Convert)")
+    image_path = 'Image/5.convert.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* y_train과 y_test를 one-hot encoding합니다.")
+    st.write("* y_train과 y_test의 shape는 (샘플 수, 클래스 수)가 됩니다.")
+
+    st.write("### 6. Modeling")
+    image_path = 'Image/6.modeling.png'
+    img = Image.open(image_path)
+    st.image(img, width = 1000)
+    st.write("* y_train과 y_test를 one-hot encoding합니다.")
+    st.write("* y_train과 y_test의 shape는 (샘플 수, 클래스 수)가 됩니다.")
+    st.write("* Sequential() 모델을 생성합니다.")
+    st.write("* Conv2D layer를 추가합니다. (filter: 32, kernel_size: (5,5), input_shape: (28,28,1), activation: relu)")
+    st.write("* MaxPooling2D layer를 추가합니다. (pool_size: (2,2))")
+    st.write("* Dropout layer를 추가합니다. (비율: 0.3)")
+    st.write("* Flatten layer를 추가합니다.")
+    st.write("* Dense layer를 추가합니다. (unit: 128, activation: relu)")
+    st.write("* Dense layer를 추가합니다. (unit: 클래스 수, activation: softmax)")
+    st.write("* 모델을 compile합니다. (loss: categorical_crossentropy, optimizer: adam, metrics: accuracy)")
+    st.write("* model.summary()를 사용하여 모델 구조를 출력합니다.")
+
+    st.write("### 7. 학습(Fit)")
+    image_path = 'Image/7.fit.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* model.fit() 함수를 사용하여 모델을 학습합니다.")
+    st.write("* train_scaled, y_train을 사용하여 학습합니다.")
+    st.write("* validation_data에 test_scaled, y_test를 전달하여 validation set으로 모델을 평가합니다.")
+    st.write("* epochs는 학습 횟수를 나타내며, 5번의 학습을 수행합니다.")
+    st.write("* batch_size는 한 번의 학습에 사용되는 샘플의 수를 나타내며, 200개의 샘플을 한 번의 학습에 사용합니다.")
+    st.write("* verbose는 학습 진행 상황을 출력하는 방식을 나타냅니다. verbose=2로 설정하면 epoch마다 학습 손실(loss)과 정확도(accuracy)를 출력합니다.")
+    st.write("* 학습이 끝나면, history 변수에 학습 이력을 저장합니다.")
+    
+    st.write("### 8. 모델 평가")
+    image_path = 'Image/8.accuracy.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* model.evaluate() 함수를 사용하여 test set으로 모델을 평가합니다.")
+    st.write("* test_scaled, y_test를 사용하여 모델을 평가합니다.")
+    st.write("* verbose=0으로 설정하여 평가 과정을 출력하지 않습니다.")
+    st.write("* 모델의 평가 결과인 손실(loss)과 정확도(accuracy)를 출력합니다.")
+
+    st.write("### 9. loss값 시각화(Visualization)")
+    image_path = 'Image/9.loss_graph.png'
+    img = Image.open(image_path)    
+    st.image(img, width = 1000)
+    st.write("* 모델 학습 과정에서 각 epoch마다 발생한 loss 값을 시각화합니다.")
+    st.write("* 그래프를 통해 모델이 학습하는 동안 손실 값이 어떻게 변화하는지, 과적합이 일어나는 지점을 파악할 수 있습니다.")
+
+
+    st.write("#### Full code")
+    st.write("https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning/blob/main/CNN_Modeling/Project_Main_ver.2.0.ipynb")
+    st.write("#### 데이터 출처")
+    st.write("https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format")
+    
 # 성찰과 개선점
 def review():
     st.write("# 성찰과 발전, review")
