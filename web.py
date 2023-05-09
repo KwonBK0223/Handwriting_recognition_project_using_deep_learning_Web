@@ -128,6 +128,13 @@ def CNN():
     img = Image.open(image_path)    
     st.image(img, width = 1000)
     
+    st.write("* CNN이 이미지 분류에 많이 사용되는 이유")
+    st.write("1. Locality of pixel dependencies")
+    st.write("객체를 구성하는 픽셀은 국소적으로만 관련있다.")
+    st.write("2. Stationarity of statistics")
+    st.write("이미지에는 위치와 관계없이 유사한 패턴이 반복될 수 있는데, 하나의 필터로 이미지를 탐색하며 같은 피쳐를 추출하여 효율적이다.")
+    st.write("ex) 입은 사람마다 가지고 있으므로 여러 명이 찍힌 사진에서 입은 컴퓨터 입장에서 유사한 패턴으로 판단할 수 있다.")
+    
 # 모델 요약
 def model_summary():
     st.write("### 1. 입력 데이터와 출력 데이터로 Split")
@@ -217,8 +224,12 @@ def model_summary():
     
 # 성찰과 개선점
 def review():
-    st.write("# 성찰과 발전, review")
-    st.write("제작중")
+    st.write("### 성찰")
+    st.write("1. 대문자 알파벳 데이터셋 밖에 구하지 못해서 소문자에는 적용하지 못하였다.")
+    st.write("2. 알파벳 철자 이미지를 하나씩 분류하기때문에, 연속적으로 사용한 단어는 인식하지 못한다.")
+    st.write("### 개선점")
+    st.write("1. 소문자 알파벳 데이터셋을 구한다면 더 다양한 손글씨를 분석할 수 있을 것이다.")
+    st.write("2. 연속해서 받은 단어를 알파벳단위로 분할하여 인식할 수 있다면 단어 이미지도 인식 할 수 있을것이다.")
     
 # 팀원 페이지
 def Team_Mate():
@@ -246,7 +257,7 @@ def Team_Mate():
         st.write("#### som0608@naver.com")
         
 # 메뉴 생성
-menu = ['Prediction', 'What is CNN', 'Modeling Results','Reflections & Improvements','Team Mate']
+menu = ['Prediction', 'What is CNN', 'Model Summary','Reflections & Improvements','Team Mate']
 choice = st.selectbox("Menu", menu)
 
 # 메뉴에 따른 페이지 선택
@@ -254,7 +265,7 @@ if choice == 'Prediction':
     home()
 elif choice == 'What is CNN':
     CNN()
-elif choice == 'Modeling Results':
+elif choice == 'Modeling Summary':
     model_summary()
 elif choice == 'Reflections & Improvements':
     review()
