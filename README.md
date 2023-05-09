@@ -1,1 +1,1 @@
-# streamlit_practice
+# Handwriting_recognition_project_using_deep_learning_Web
