@@ -124,10 +124,6 @@ def CNN():
     st.write("(4) Fully Connected layer: 소프트맥스를 활성화함수로 사용하여 다중 분류(Multi-class Classification)")
     st.write("(5) Output layer: 이미지를 분류해 결과 출력")
     
-    url = 'https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning_Web/blob/main/Image/CNN.PNG'
-    response = requests.get(url)
-    img = Image.open(BytesIO(response.content))
-
 # 모델링 결과
 def modeling_result():
     st.write("# 모델링 결과")
