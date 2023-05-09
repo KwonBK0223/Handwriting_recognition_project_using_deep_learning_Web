@@ -255,7 +255,7 @@ if choice == 'Prediction':
 elif choice == 'What is CNN':
     CNN()
 elif choice == 'Modeling Results':
-    modeling_result()
+    model_summary()
 elif choice == 'Reflections & Improvements':
     review()
 elif choice == 'Team Mate':
