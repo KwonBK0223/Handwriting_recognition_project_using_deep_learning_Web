@@ -138,12 +138,12 @@ def Team_Mate():
     with col2:
         st.write("# Leader")
         st.write("## Kwon Byeong Keun")
-        st.write("#### PNU Matematics 17")
+        st.write("#### PNU Matematics 17 & Industrial Mathematics Software Interdepartmental")
         st.write("#### house9895@naver.com")
 
         st.write("# Team mate")
         st.write("## Seong Da Som")
-        st.write("#### PNU Mathematics 19")
+        st.write("#### PNU Mathematics 19 & Big Data Interdepartmental")
         st.write("#### som0608@naver.com")
         
 # 메뉴 생성
