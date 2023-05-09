@@ -265,7 +265,7 @@ if choice == 'Prediction':
     home()
 elif choice == 'What is CNN':
     CNN()
-elif choice == 'Modeling Summary':
+elif choice == 'Model Summary':
     model_summary()
 elif choice == 'Reflections & Improvements':
     review()
