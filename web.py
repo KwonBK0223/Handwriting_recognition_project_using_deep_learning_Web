@@ -147,7 +147,23 @@ def CNN():
     st.write("이는 대상 A와 B 간의 구조와 내부 연산이 서로 동일하게 보존되는 것을 의미합니다.")
     st.write("* Min-Max Scaling & Isomorphic")
     st.write("Min-Max 스케일링은 입력 데이터에 대한 일대일 대응 매핑을 수행하고, 이로 인해 데이터 간의 상대적인 크기가 보존되므로 Isomorphic 이다.")
-
+    
+    st.write("### What is ReLU")
+    st.write("* ReLU(Rectified Linear Unit)")
+    st.write("f(x) = max(0,x)")
+    st.write("입력값이 양수일 경우 그대로 출력하고, 음수일 경우 0으로 출력하는 함수")
+    st.write("* Why use ReLU")
+    st.write("1. 비선형 함수")
+    st.write("ReLU 함수는 비선형 함수로서, 딥러닝 모델에서 비선형성을 추가할 때 많이 사용됩니다.")
+    st.write("비선형 함수를 사용함으로써 모델이 다양한 패턴과 특징을 학습할 수 있게 됩니다.")
+    st.write("2. Gradient vanishing 문제 해결")
+    st.write("Sigmoid나 Tanh와 같은 함수는 입력값의 절댓값이 커질수록 기울기가 0에 가까워지는 gradient vanishing 문제를 가지고 있습니다.")
+    st.write("하지만 ReLU 함수는 입력값이 음수일 때 기울기가 0이기 때문에 gradient vanishing 문제를 해결할 수 있습니다.")
+    st.write("3. 계산 속도 향상")
+    st.write("ReLU 함수는 계산 속도가 빠르기 때문에 딥러닝 모델의 학습 속도를 향상시킬 수 있습니다.")
+    st.write("4. Sparsity")
+    st.write("입력값이 음수일 경우 출력값이 0이 되기 때문에, ReLU 함수를 사용하는 모델은 자연스럽게 sparse한 모델이 됩니다.")
+    st.write("이는 모델이 더 간단해지고, 과적합을 방지할 수 있습니다.")
     
 # 모델 요약
 def model_summary():
