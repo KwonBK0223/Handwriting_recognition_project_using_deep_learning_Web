@@ -135,6 +135,20 @@ def CNN():
     st.write("이미지에는 위치와 관계없이 유사한 패턴이 반복될 수 있는데, 하나의 필터로 이미지를 탐색하며 같은 피쳐를 추출하여 효율적이다.")
     st.write("ex) 입은 사람마다 가지고 있으므로 여러 명이 찍힌 사진에서 입은 컴퓨터 입장에서 유사한 패턴으로 판단할 수 있다.")
     
+    st.write("# Modeling with Mathematics")
+    st.write("### Min-Max Scaling & Isomorphic")
+    st.write("* Min-Max Scaling")
+    st.write("Min-Max Scaling은 입력 데이터의 범위를 0과 1사이로 조정하는 방법이다.")
+    st.write("이 스케일링을 수행하면 입력 데이터의 최솟값은 0, 최댓값은 1이 되도록 조정된다.")
+    st.write("이러한 스케일링은 입력 데이터의 모든 값이 일정한 비율로 조정되므로 데이터 간의 상대적인 크기가 보존된다.")
+    st.write("* Isomorphic")
+    st.write("Isomorphic은 두 개의 대상 A와 B가 있을 때, A와 B 간의 매핑 f가 존재하고,")
+    st.write("이 매핑이 일대일 대응이면서 연산을 보존하며 역함수가 존재하는 경우를 의미합니다.")
+    st.write("이는 대상 A와 B 간의 구조와 내부 연산이 서로 동일하게 보존되는 것을 의미합니다.")
+    st.write("* Min-Max Scaling & Isomorphic")
+    st.write("Min-Max 스케일링은 입력 데이터에 대한 일대일 대응 매핑을 수행하고, 이로 인해 데이터 간의 상대적인 크기가 보존되므로 Isomorphic 이다.")
+
+    
 # 모델 요약
 def model_summary():
     st.write("### 1. 입력 데이터와 출력 데이터로 Split")
@@ -257,13 +271,13 @@ def Team_Mate():
         st.write("#### som0608@naver.com")
         
 # 메뉴 생성
-menu = ['Prediction', 'What is CNN', 'Model Summary','Reflections & Improvements','Team Mate']
+menu = ['Prediction', 'What is CNN & Modeling with Mathematics', 'Model Summary','Reflections & Improvements','Team Mate']
 choice = st.selectbox("Menu", menu)
 
 # 메뉴에 따른 페이지 선택
 if choice == 'Prediction':
     home()
-elif choice == 'What is CNN':
+elif choice == 'What is CNN & Modeling with Mathematics':
     CNN()
 elif choice == 'Model Summary':
     model_summary()
