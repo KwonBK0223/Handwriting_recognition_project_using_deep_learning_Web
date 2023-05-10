@@ -175,6 +175,17 @@ def CNN():
     st.write("1. 출력값이 확률로 나타낼 수 있어 해석하기 쉽습니다.")
     st.write("2. 분류 모델에서 모델의 예측값과 정답값 사이의 차이를 계산하는 손실 함수인 cross-entropy와 함께 사용하면, 효과적인 학습이 가능합니다.")
     
+    st.write("### What is categorical cross-entropy loss")
+    st.write("* categorical cross-entropy loss")
+    st.latex(r'''loss = -\frac{1}{N} \sum_{i=1}^N \sum_{j=1}^M y_{ij} \log(p_{ij})''')
+    st.write(" 다중 클래스 분류에서 사용되는 손실 함수")
+    st.write("분류 문제에서 예측값과 실제값 사이의 오차를 계산하는 데 사용됩니다.")
+    st.write("cross-entropy loss는 확률 분포 사이의 차이를 측정하며, categorical cross-entropy loss는 다중 클래스 분류 문제에 적합합니다.")
+    st.write("Why use categorical cross-entropy loss")
+    st.write("1. 그래디언트가 0이 아니기 때문에 모든 레이어에서 학습이 가능하다.")
+    st.write("2. 확률 분포를 사용하기 때문에 모델이 확률적인 예측을 하게된다.")
+
+    
     
 # 모델 요약
 def model_summary():
