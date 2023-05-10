@@ -185,6 +185,26 @@ def CNN():
     st.write("1. 그래디언트가 0이 아니기 때문에 모든 레이어에서 학습이 가능하다.")
     st.write("2. 확률 분포를 사용하기 때문에 모델이 확률적인 예측을 하게된다.")
 
+        st.write("### Optimizer with Adam")
+    st.write("* Optimizer")
+    st.write("최적화 알고리즘은 모델이 학습하는 과정에서 최적의 가중치(weight)와 편향(bias)을 찾아내기 위한 방법을 제공합니다.")
+    st.write("이 과정에서 손실 함수(loss function)를 최소화하기 위한 가중치와 편향을 찾는 것이 목적입니다.")
+    st.write("* Adam")
+    st.latex(r'''
+    m_t = \beta_1 m_{t-1} + (1-\beta_1)g_t \\
+    v_t = \beta_2 v_{t-1} + (1-\beta_2)g_t^2 \\
+    \hat{m}_t = \frac{m_t}{1-\beta_1^t} \\
+    \hat{v}_t = \frac{v_t}{1-\beta_2^t} \\
+    \theta_t = \theta_{t-1} - \frac{\eta}{\sqrt{\hat{v}_t}+\epsilon} \hat{m}_t
+    ''')
+    st.write(r"$w$: 학습되는 가중치")
+    st.write(r"$g_t$: 현재 그래디언트")
+    st.write(r"$m_t$: 이전 시간 단계의 지수 가중 이동 평균")
+    st.write(r"$v_t$: 이전 시간 단계의 제곱 그래디언트의 지수 가중 이동 평균")
+    st.write(r"$\beta_1$: 첫 번째 모멘트의 지수적 감소율")
+    st.write(r"$\beta_2$: 두 번째 모멘트의 지수적 감소율")
+    st.write(r"$\eta$: 학습률")
+    st.write(r"$\epsilon$: 분모를 0으로 나누는 것을 방지하기 위한 작은 값")
     
     
 # 모델 요약
