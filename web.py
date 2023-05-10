@@ -294,7 +294,17 @@ def model_summary():
     st.image(img, width = 1000)
     st.write("* 모델 학습 과정에서 각 epoch마다 발생한 loss 값을 시각화합니다.")
     st.write("* 그래프를 통해 모델이 학습하는 동안 손실 값이 어떻게 변화하는지, 과적합이 일어나는 지점을 파악할 수 있습니다.")
-
+    
+    st.write("### Library Version")
+    st.write("* Python version: 3.9.12")
+    st.write("* pandas version: 1.4.2")
+    st.write("* numpy version: 1.21.5")
+    st.write("* matplotlib version: 3.5.1")
+    st.write("* seaborn version: 0.11.2")
+    st.write("* tensorflow version: 2.11.0")
+    st.write("* cv2 version: 4.7.0")
+    st.write("* sklearn version: 1.0.2")
+    st.write("* keras version: 2.10.0")
 
     st.write("#### Full code")
     st.write("https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning/blob/main/CNN_Modeling/Project_Main_ver.2.0.ipynb")
