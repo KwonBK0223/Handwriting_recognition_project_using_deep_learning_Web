@@ -150,7 +150,7 @@ def CNN():
     
     st.write("### What is ReLU")
     st.write("* ReLU(Rectified Linear Unit)")
-    st.write("f(x) = max(0,x)")
+    st.latex(r''' f(x) = max(0,x)''')
     st.write("입력값이 양수일 경우 그대로 출력하고, 음수일 경우 0으로 출력하는 함수")
     st.write("* Why use ReLU")
     st.write("1. 비선형 함수")
@@ -164,6 +164,17 @@ def CNN():
     st.write("4. Sparsity")
     st.write("입력값이 음수일 경우 출력값이 0이 되기 때문에, ReLU 함수를 사용하는 모델은 자연스럽게 sparse한 모델이 됩니다.")
     st.write("이는 모델이 더 간단해지고, 과적합을 방지할 수 있습니다.")
+    
+    st.write("### What is Softmax")
+    st.write("* Softmax")
+    st.latex(r'''softmax(x)_i = \frac{e^{x_i}}{\sum_{j=1}^{K} e^{x_j}}''')
+    st.write("분류 문제에서 출력층의 활성화 값을 확률로 변환해주는 함수")
+    st.write("출력층에서 다중 클래스 분류문제에 사용되며, 모든 클래스에 대한 예측값의 합이 1이 되도록 만들어준다.")
+    st.write("이를 통해 각 클래스에 대한 확률 값을 계산할 수 있다.")
+    st.write("* Why use sofrmax")
+    st.write("1. 출력값이 확률로 나타낼 수 있어 해석하기 쉽습니다.")
+    st.write("2. 분류 모델에서 모델의 예측값과 정답값 사이의 차이를 계산하는 손실 함수인 cross-entropy와 함께 사용하면, 효과적인 학습이 가능합니다.")
+    
     
 # 모델 요약
 def model_summary():
