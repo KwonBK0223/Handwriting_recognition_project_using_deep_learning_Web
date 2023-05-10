@@ -205,6 +205,13 @@ def CNN():
     st.write(r"$\beta_2$: 두 번째 모멘트의 지수적 감소율")
     st.write(r"$\eta$: 학습률")
     st.write(r"$\epsilon$: 분모를 0으로 나누는 것을 방지하기 위한 작은 값")
+    st.write("")
+    st.write("")
+    st.write("경사하강법(gradient descent)의 변형 알고리즘입니다.")
+    st.write("Adam은 각 가중치에 대한 적응형 학습률(adaptive learning rate)을 사용해 효율적인 학습을 가능하게 합니다. ")
+    st.write("* Why use Adam")
+    st.write("1. 학습률을 동적으로 조절하여 학습 속도를 높이고, 과적합(overfitting)을 방지하며, 성능을 최적화하는 효과를 가져옵니다.")
+    st.write("2. Adam은 다른 최적화 알고리즘들과 비교했을 때 빠르게 수렴하고, 대부분의 경우에서 성능이 우수하다는 장점이 있습니다.")
     
     
 # 모델 요약
