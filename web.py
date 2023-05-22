@@ -307,7 +307,7 @@ def model_summary():
     st.write("* keras version: 2.10.0")
 
     st.write("#### Full code")
-    st.write("https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning/blob/main/CNN_Modeling/Project_Main_ver.2.0.ipynb")
+    st.write("https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning/blob/main/CNN_Modeling/Project_Main_ver.3.0.ipynb")
     st.write("#### 데이터 출처")
     st.write("https://www.kaggle.com/datasets/sachinpatel21/az-handwritten-alphabets-in-csv-format")
     
