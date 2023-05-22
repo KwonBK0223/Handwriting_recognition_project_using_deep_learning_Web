@@ -259,7 +259,7 @@ def model_summary():
     st.write("* 회전 범위, 가로/세로 이동 범위, 전단 변형 범위, 확대/축소 범위를 설정하여 다양한 변형을 적용할 수 있습니다.")
     st.write("* Sequential 모델 객체를 생성합니다.")
     st.write("* Conv2D 층을 추가하여 2D 합성곱 연산을 수행합니다. ")
-    st.write(" 첫 번째 층은 입력 형태를 설정하기 위해 input_shape를 지정합니다.")
+    st.write("      첫 번째 층은 입력 형태를 설정하기 위해 input_shape를 지정합니다.")
     st.write("* BatchNormalization 층을 추가하여 배치 정규화를 수행합니다.")
     st.write("* MaxPooling2D 층을 추가하여 풀링을 수행합니다.")
     st.write("* Dropout을 추가하여 과적합을 방지합니다.")
