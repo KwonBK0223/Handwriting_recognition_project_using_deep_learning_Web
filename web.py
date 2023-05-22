@@ -17,11 +17,11 @@ st.write('# Prediction of handwritten English character')
 # 모델 로드
 @st.cache(allow_output_mutation=True)
 def load():
-    url = 'https://github.com/KwonBK0223/streamlit_practice/raw/main/maincnn.h5'
+    url = 'https://github.com/KwonBK0223/Handwriting_recognition_project_using_deep_learning_Web/raw/main/main_CNN_ver2.h5'
     r = requests.get(url)
-    with open('maincnn.h5','wb') as f:
-        f.write(r.content)        
-    model = load_model('maincnn.h5')
+    with open('main_CNN_ver2.h5', 'wb') as f:
+        f.write(r.content)
+    model = load_model('main_CNN_ver2.h5')
     return model
 model = load()
 
